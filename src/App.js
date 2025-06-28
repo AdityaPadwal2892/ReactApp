@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import Greeting from './components/MyComponent/MyComponent';
 import './App.css';
+import Header from './components/Header';
+import Features from './components/Feature';
+import Footer from './components/Footer';
+import Services from './components/Services';
+import Contact from './components/Contact';
+import React, { useState } from 'react'; // make sure useState is imported
+
 
 function App() {
+
+   const [showContact, setShowContact] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Header onContactClick={() => setShowContact(true)}/>
+
+       <Greeting/>
+ <Features />
+ <Services/>
+   <Contact showModal={showContact} closeForm={() => setShowContact(false)}  />
+<Footer/>
+
+
+      
     </div>
   );
 }
