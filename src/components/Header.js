@@ -1,17 +1,25 @@
-// Header.js
-import React from 'react';
-import './Header.css'; // Import the CSS file for styling
+import React, { useState } from 'react';
+import './Header.css';
 
 function Header({ onContactClick }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
   return (
     <header className="app-header">
       <div className="logo">🌟 US Constructions</div>
-      <nav className="nav-links">
-        <a href="#home">Home</a>
-        <a href="#features">Features</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-       <button className="contact-btn" onClick={onContactClick}>
+
+      <div className="menu-toggle" onClick={toggleMenu}>
+        ☰
+      </div>
+
+      <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
+        <a href="#home" onClick={toggleMenu}>Home</a>
+        <a href="#features" onClick={toggleMenu}>Features</a>
+        <a href="#about" onClick={toggleMenu}>About</a>
+        <a href="#services" onClick={toggleMenu}>Services</a>
+        <button className="contact-btn" onClick={() => { toggleMenu(); onContactClick(); }}>
           Contact Us
         </button>
       </nav>

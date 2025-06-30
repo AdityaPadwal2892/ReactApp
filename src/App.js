@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import React, { useState } from 'react'; // make sure useState is imported
+import About from './components/About';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
 
        <Greeting/>
  <Features />
+<About/>
  <Services/>
    <Contact showModal={showContact} closeForm={() => setShowContact(false)}  />
 <Footer/>

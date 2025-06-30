@@ -6,7 +6,7 @@ function HomePage() {
       <header className="hero">
         <h1>🏗️ BuildRight Construction Co.</h1>
         <p>Reliable. Professional. Affordable.</p>
-        <a href="#contact" className="cta-button" id="footer">Get a Contact</a>
+        <a href="#contact" className="cta-button" id="footer">Lets Build together!!</a>
       </header>
 
       <section className="about-section">
